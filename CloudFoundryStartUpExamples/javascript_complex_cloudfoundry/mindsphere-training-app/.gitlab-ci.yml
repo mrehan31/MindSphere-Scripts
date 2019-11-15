@@ -1,0 +1,58 @@
+before_script:
+  - npm install simpl-cli --global --registry https://devops.bt.siemens.com/artifactory/api/npm/npm-all
+  - simpl config
+
+stages:
+  - lint
+  - build
+  - deploy
+
+lint:
+  stage: lint
+  image: node:lts
+  script:
+    - npm install
+    - npm run lint
+
+build:
+  stage: build
+  image: node:lts
+  script:
+    - npm install
+    - npm run build:prod
+  artifacts:
+    paths:
+      - dist/mindsphere-training-app
+    expire_in: 1 hour
+
+test:
+  stage: build
+  image: node:lts
+  script:
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    - sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+    - apt-get update && apt-get install -yq --no-install-recommends google-chrome-stable
+    - npm install
+    - npm run test:ci
+
+e2e:
+  stage: build
+  image: node:lts
+  script:
+    - wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+    - sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+    - apt-get update && apt-get install -yq --no-install-recommends google-chrome-stable
+    - npm install
+    - npm run e2e
+
+deploy:
+  stage: deploy
+  image: docker.siemens.com/ccp/vm:stable
+  before_script:
+    - echo "override global before_script"
+  script:
+    - sudo apt-get update -qq && sudo apt-get install -y -qq cf-cli
+    - mkdir -p ~/.cf
+    - echo "{\"ConfigVersion\":3,\"Target\":\"$CF_API\",\"AccessToken\":\"bearer ${CF_ACCESS_TOKEN}\",\"RefreshToken\":\"${CF_REFRESH_TOKEN}\"}" > ~/.cf/config.json
+    - cf target -o $CF_ORG -s $CF_SPACE
+    - cf push mindsphere-training-app-ui

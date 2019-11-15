@@ -1,0 +1,6 @@
+<app-section-maintenance-ui
+  [extended]="extended"
+  [responseInfo]="responseInfo$ | async"
+  (maintenancePeriod)="handleMaintenancePeriodSubmitted($event)"
+  (maintenanceReport)="handleMaintenanceReportSubmitted($event)"
+></app-section-maintenance-ui>

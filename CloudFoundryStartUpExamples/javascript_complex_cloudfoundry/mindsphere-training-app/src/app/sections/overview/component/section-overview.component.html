@@ -1,0 +1,6 @@
+<app-section-overview-ui
+  [isEditable]="isEditable"
+  [(viewMode)]="viewMode"
+  [assetData]="assetData$ | async"
+  (assetDataChange)="handleAssetDataChange($event)">
+</app-section-overview-ui>

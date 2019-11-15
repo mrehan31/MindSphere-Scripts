@@ -1,0 +1,7 @@
+applications:
+- name: mindsphere-training-app-ui
+  memory: 64M
+  path: ./dist/mindsphere-training-app
+  random-route: true
+  buildpacks:
+  - staticfile_buildpack

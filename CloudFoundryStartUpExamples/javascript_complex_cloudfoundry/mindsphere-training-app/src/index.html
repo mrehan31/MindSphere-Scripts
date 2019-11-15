@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MindsphereTrainingApp</title>
+  <base href="/">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="https://static.eu1.mindsphere.io/osbar/v4/js/main.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>  
+  <div id="_mdspcontent">
+    <app-root></app-root>
+  </div>
+
+  <script>
+    _mdsp.init({
+      title: 'MindSphere Training App',
+        appId: '_mdspcontent',
+        appInfoPath: '/static/app-info.json',
+        polyfills: {
+          es5adapter: true,
+          promise: false,
+          webcomponents: true
+        }
+    })
+  </script>
+</body>
+</html>

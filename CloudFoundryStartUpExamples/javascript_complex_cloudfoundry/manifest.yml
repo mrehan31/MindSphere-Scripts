@@ -1,0 +1,13 @@
+applications:
+- name: mindsphere-training-app-ui
+  memory: 64M
+  path: ./mindsphere-training-app/dist/mindsphere-training-app
+  random-route: true
+  buildpacks:
+  - staticfile_buildpack
+- name: mindsphere-training-app-backend
+  random-route: true
+  buildpacks:
+  - nodejs_buildpack
+  path: ./mindsphere-training-app-backend
+  memory: 512M

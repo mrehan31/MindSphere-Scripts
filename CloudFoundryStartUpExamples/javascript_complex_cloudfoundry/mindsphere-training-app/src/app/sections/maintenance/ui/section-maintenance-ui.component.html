@@ -1,0 +1,11 @@
+<div>
+  <div class="title">Maintenance</div>
+  <div class="form-component">
+    <app-section-maintenance-ui-form
+      [extended]="extended"
+      [responseInfo]="responseInfo"
+      (maintenancePeriod)="handleMaintenancePeriodSubmitted($event)"
+      (maintenanceReport)="handleMaintenanceReportSubmitted($event)"
+    ></app-section-maintenance-ui-form>
+  </div>
+</div>

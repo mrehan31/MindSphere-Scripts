@@ -1,0 +1,6 @@
+<div class="timeseries-buttons">
+  <button mat-raised-button [ngClass]="(selectedFunction==='min') ? 'mat-accent' : 'mat-primary'" (click)="handleMinButtonClick($event)" id="agg-button-min">Min</button>
+  <button mat-raised-button [ngClass]="(selectedFunction==='max') ? 'mat-accent' : 'mat-primary'" (click)="handleMaxButtonClick($event)" id="agg-button-max">Max</button>
+  <button mat-raised-button [ngClass]="(selectedFunction==='avg') ? 'mat-accent' : 'mat-primary'" (click)="handleAvgButtonClick($event)" id="agg-button-avg">Avg</button>
+  <button mat-raised-button [ngClass]="(selectedFunction==='sum') ? 'mat-accent' : 'mat-primary'" (click)="handleSumButtonClick($event)" id="agg-button-sum">Sum</button>
+</div>

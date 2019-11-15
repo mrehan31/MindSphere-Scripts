@@ -1,0 +1,13 @@
+{
+    "displayName": "MindSphere Training Application",
+    "appVersion": "1.0.0",
+    "links": {
+        "default": [
+          {
+            "type": "WWW",
+            "name": "MindSphere",
+            "value": "https://mindsphere.io"
+          }
+        ]
+      }
+}

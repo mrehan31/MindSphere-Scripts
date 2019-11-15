@@ -1,0 +1,17 @@
+hidden/credential.json
+hidden/token.json
+env
+.idea
+.log
+node_modules
+.vscode
+build
+dist
+.DS_Store
+AppIdInTenant.json
+AppUniqueURL.json
+AppTreeOwnership.json
+AppURLInCF.json
+AppServicesTreeOwnership.json
+__pycache__
+debug.log

@@ -1,0 +1,7 @@
+applications:
+  - name: mywebapp
+    memory: 100MB
+    random-route: true
+    path: dist/
+    buildpacks: 
+      - staticfile_buildpack

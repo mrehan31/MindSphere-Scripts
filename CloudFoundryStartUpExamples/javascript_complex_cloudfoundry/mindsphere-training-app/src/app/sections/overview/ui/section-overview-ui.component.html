@@ -1,0 +1,20 @@
+<div>
+  <img src="/static/imgs/barrel.png" *ngIf="viewMode === 'read'" class="barrel">
+  <app-section-overview-ui-readonly
+    [assetData]="assetData"
+    *ngIf="!isEditable || viewMode === 'read'"
+    >
+  </app-section-overview-ui-readonly>
+
+  <app-section-overview-ui-edit
+    [assetData]="assetData"
+    (assetDataChange)="handleEditSubmit($event)"
+    (cancel)="handleEditCancel($event)"
+    *ngIf="isEditable && viewMode === 'edit'"
+    >
+  </app-section-overview-ui-edit>
+
+  <div id="edit-button-container" *ngIf="isEditable && viewMode === 'read'">
+      <button mat-fab color="primary" (click)="handleEditButtonClick($event)"><mat-icon>edit</mat-icon></button>
+  </div>
+</div>

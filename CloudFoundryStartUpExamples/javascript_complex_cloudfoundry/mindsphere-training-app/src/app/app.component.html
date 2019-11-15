@@ -1,0 +1,19 @@
+<div class="section-container">
+  <a id="overview"></a>
+  <div class="section">
+    <app-section-overview
+      [isEditable]="true"
+    ></app-section-overview>
+  </div>
+  <div class="section">
+    <app-section-data>
+    </app-section-data>
+  </div>
+  <div class="section">
+    <app-section-maintenance
+      [extended]="true"
+    ></app-section-maintenance>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

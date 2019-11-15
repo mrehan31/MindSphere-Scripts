@@ -1,0 +1,9 @@
+---
+applications:
+  - name: my_django
+    stack: cflinuxfs3
+    random-route: true
+    command: python mysite/manage.py runserver
+    memory: 256MB
+    env:
+      MDSP-ENV: eu1

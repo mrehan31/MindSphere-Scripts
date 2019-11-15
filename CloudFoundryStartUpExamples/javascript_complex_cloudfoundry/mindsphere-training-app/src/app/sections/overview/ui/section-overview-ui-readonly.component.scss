@@ -1,0 +1,26 @@
+.title-container {
+    width: 66vw;
+    margin: auto;
+}
+
+.description {
+    width: 66vw;
+    font-size: 2em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+    padding: 10px;
+}
+
+.vartable {
+    width: 33.3333vw;
+    position: relative;
+    margin: auto;
+    padding-top: 2vh;
+}
+
+.vartable table {
+    width: 100%;
+    text-align: left;
+}

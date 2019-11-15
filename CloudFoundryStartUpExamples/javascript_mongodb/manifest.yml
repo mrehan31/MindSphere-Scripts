@@ -1,0 +1,11 @@
+applications:
+  - name: mywebapp
+    memory: 100MB
+    random-route: true
+    buildpacks:
+      - nodejs_buildpack
+    command: node app.js
+    env:
+      CONFIG: '{
+        "mongoservice": "mymongodb"
+        }'

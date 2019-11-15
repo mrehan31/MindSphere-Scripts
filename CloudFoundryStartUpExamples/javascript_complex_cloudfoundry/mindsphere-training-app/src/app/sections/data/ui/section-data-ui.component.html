@@ -1,0 +1,22 @@
+<div>
+  <div class="title">Data</div>
+  <mat-form-field>
+    <mat-select placeholder="Variable" (selectionChange)="handleSelectionChanged($event)" [value]="selectionData?.aspectVariable">
+      <mat-option *ngFor="let aspectVariable of aspectVariables" [value]="aspectVariable.id">
+        {{ aspectVariable.displayText}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="timeseries-container" *ngIf="aspectVariables.length > 0">
+      
+    <app-section-data-ui-buttons 
+      [selectedFunction]="selectionData.aggregationFunction"
+      (selectedFunctionChanged)="handleAggregationFunctionChanged($event)">
+    </app-section-data-ui-buttons>
+      
+    <app-section-data-ui-graph
+      [chartData]="chartData">
+    </app-section-data-ui-graph>
+
+  </div> 
+</div>

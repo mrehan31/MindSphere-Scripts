@@ -1,0 +1,67 @@
+<div class="maintenance-form-container">
+  <div>
+    <mat-form-field>
+      <input matInput [matDatepicker]="beginDatepicker" placeholder="Begin Date" [(ngModel)]="beginDate">
+      <mat-datepicker-toggle matSuffix [for]="beginDatepicker"></mat-datepicker-toggle>
+      <mat-datepicker #beginDatepicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field style="margin-left: 20px;">
+      <input matInput placeholder="Begin Time" [(ngModel)]="beginTime">
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="End Date" [(ngModel)]="endDate">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field style="margin-left: 20px;">
+      <input matInput placeholder="End Time" [(ngModel)]="endTime">
+    </mat-form-field>
+  </div>
+  <div id="maintenance-extended" *ngIf="extended">
+    <div>
+      <mat-form-field class="extended-input-field">
+        <input matInput placeholder="Maintainer" [(ngModel)]="maintainer">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="extended-input-field">
+        <input matInput placeholder="Reason" [(ngModel)]="reason">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="extended-input-field">
+        <input matInput placeholder="Description" [(ngModel)]="description">
+      </mat-form-field>
+    </div>
+  </div>
+  <div>
+    <div class="submission-container" style="display: flex;">
+      <div>
+        <button mat-raised-button id="maintenance-submit-button" color="primary"
+          (click)="handleSubmitButtonClick($event)">
+          Submit
+        </button>
+      </div>
+
+      <div class="response-field response-field-ok" *ngIf="responseInfo && responseInfo.state === 'OK'">
+        <div>
+          <mat-icon>check_circle_outline</mat-icon>
+        </div>
+        <div class="response-field-message">
+          Submitted
+        </div>
+      </div>
+
+      <div class="response-field response-field-error" *ngIf="responseInfo && responseInfo.state === 'ERROR'">
+          <div>
+            <mat-icon>remove_circle</mat-icon>
+          </div>
+          <div class="response-field-message">
+            Error, see console
+          </div>
+        </div>
+    </div>
+  </div>
+</div>

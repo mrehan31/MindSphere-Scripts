@@ -1,0 +1,8 @@
+applications:
+  - name: tokenapp
+    instances: 1
+    random-route: true
+    memory: 50MB
+    buildpacks:
+      - nodejs_buildpack
+    command: node app.js

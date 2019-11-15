@@ -1,0 +1,8 @@
+applications:
+  - name: mywebapp
+    memory: 50MB
+    disk_quota: 250MB
+    random-route: true
+    buildpacks:
+      - nodejs_buildpack
+    command: node app.js

@@ -1,0 +1,7 @@
+---
+applications:
+- name: mindsphere-training-app-backend
+  random-route: true
+  buildpacks:
+  - nodejs_buildpack
+

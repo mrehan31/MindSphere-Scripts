@@ -1,0 +1,5 @@
+applications:
+  - name: mywebapp234
+    memory: 100MB
+    random-route: true
+    buildpacks: [dotnet_core_buildpack]

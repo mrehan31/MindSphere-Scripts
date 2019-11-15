@@ -1,0 +1,7 @@
+applications:
+  - name: mywebappreact
+    memory: 100MB
+    random-route: true
+    path: build/
+    buildpacks: 
+      - staticfile_buildpack

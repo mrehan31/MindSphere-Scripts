@@ -1,0 +1,9 @@
+---
+applications:
+  - name: CEPyTSApp
+    stack: cflinuxfs3
+    random-route: true
+    command: python serverTS.py
+    memory: 256MB
+    env:
+      MDSP-ENV: eu1

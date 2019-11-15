@@ -1,0 +1,24 @@
+<div class="title">Edit</div>
+<div class="edit-container">
+  <div>
+    <mat-form-field id="edit-input-name" >
+      <input matInput placeholder="Name" [(ngModel)]="assetDataClone.name">
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field id="edit-input-description">
+      <input matInput placeholder="Description" [(ngModel)]="assetDataClone.description">
+    </mat-form-field>
+  </div>
+
+  <div class="edit-container-variables">
+    <div class="title variables">Variables</div>
+
+    <mat-form-field *ngFor="let variable of assetDataClone.variables">
+      <input matInput [placeholder]="variable.name" [(ngModel)]="variable.value">
+    </mat-form-field>
+  </div>
+  <button mat-raised-button id="edit-submit-button" color="primary" (click)="handleSubmitButtonClick($event)">Submit</button>
+  <button mat-raised-button id="edit-cancel-button" color="basic" (click)="handleCancelButtonClick($event)">Cancel</button>
+</div>

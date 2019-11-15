@@ -1,0 +1,8 @@
+$osbar_height: 45px;
+
+.section {
+    min-height: calc(100vh - #{$osbar_height});
+    text-align: center;
+    box-sizing: border-box;
+    padding-top: 5vh;
+}

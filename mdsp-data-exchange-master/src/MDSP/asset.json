@@ -1,0 +1,41 @@
+{
+  "name": "Millenium Falcon",
+  "externalId": "SN 123456-123-123456",
+  "description": "The ship of Han Solo and Chewbacca",
+  "location": {
+    "country": "Austria",
+    "region": "Tyrol",
+    "locality": "Innsbruck",
+    "streetAddress": "Industriestraße 21 A/II",
+    "postalCode": "6020",
+    "longitude": 53.5125546,
+    "latitude": 9.9763411
+  },
+  "variables": [
+    {
+      "name": "color",
+      "value": "yellow"
+    }
+  ],
+  "aspects": [
+    {
+      "name": "astroDroid",
+      "variables": [
+        {
+          "name": "color",
+          "value": "yellow"
+        }
+      ]
+    }
+  ],
+  "fileAssignments": [
+    {
+      "key": "logo_small",
+      "fileId": "c27a28b6eb16b507fabc11e75da8b4ce"
+    }
+  ],
+  "typeId": "mdsp.spaceship",
+  "parentId": "c27a28b6eb16b507fabc11e75da8b4ce",
+  "timezone": "Europe/Berlin",
+  "twinType": "performance"
+}
