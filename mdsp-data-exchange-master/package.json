@@ -21,7 +21,7 @@
     "chart.js": "^2.8.0",
     "core-js": "^2.6.5",
     "ejs": "^2.7.1",
-    "electron": "^6.0.12",
+    "electron": "^7.2.4",
     "express": "^4.17.1",
     "fs": "0.0.1-security",
     "material-design-icons-iconfont": "^5.0.1",
